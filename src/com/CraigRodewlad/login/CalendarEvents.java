@@ -3,12 +3,14 @@ package com.CraigRodewlad.login;
 public class CalendarEvents {
 	private String eventName;
 	private String eventDate;
+	private String eventTime;
 	private String eventDescription;
 	
-	public CalendarEvents(String eventName, String startDate, String eventDescription) {
+	public CalendarEvents(String eventName, String startDate, String eventTime, String eventDescription) {
 		super();
 		this.eventName = eventName;
 		this.eventDate = startDate;
+		this.eventTime = eventTime;
 		this.eventDescription = eventDescription;
 	}
 	
@@ -34,6 +36,14 @@ public class CalendarEvents {
 	
 	public void setEventDescription(String eventDescription) {
 		this.eventDescription = eventDescription;
+	}
+	
+	public String getEventTime() {
+		return eventTime;
+	}
+	
+	public void setEventTime(String eventTime) {
+		this.eventTime = eventTime;
 	}
 	
 	public void showCalendarEvents(){

@@ -96,28 +96,40 @@ public class PatronsAccess {
 		return null;
 	}
 	
-	public static void retrieveCalendarInfo(){
+	public static CalendarEvents retrieveCalendarInfo(){
 		try {
 			startConnection();
-			preparedStatement = connect.prepareStatement("SELECT * FROM library.calendar_events");
+			preparedStatement = connect.prepareStatement("SELECT * FROM library.calendar");
 			resultSet = preparedStatement.executeQuery();
 			
 			System.out.println("Upcoming events:");
 			
 			while (resultSet.next()) {
+				CalendarEvents event = new CalendarEvents(null, null, null, null);
+				event.setEventName(resultSet.getString("event_name"));
+				event.setEventDate(resultSet.getString("event_date"));
+				event.setEventTime(resultSet.getString("event_time"));
+				event.setEventDescription(resultSet.getString("event_description"));
+				
+				
 				String eventName = resultSet.getString("event_name");
 				String eventDate = resultSet.getString("event_date");
+				String eventTime = resultSet.getString("event_time");
 				String eventDescription = resultSet.getString("event_description");
 				
-				System.out.println(eventName + " on " + eventDate);
+				System.out.println(eventName + " on " + eventDate + " at " + eventTime);
 				System.out.println(eventDescription);
 				System.out.println();
+				
+				return event;
 			}
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
 		
 	}
 

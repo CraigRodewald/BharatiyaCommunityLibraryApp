@@ -7,9 +7,9 @@ public class CurrentMember {
 		System.out.print("Please enter your phone number: ");
 		String answer = scan.next();
 		
-		boolean doesExisit = PatronsAccess.checkIfMemberExists(answer);
+		Member member = PatronsAccess.checkIfMemberExists(answer);
 		
-		if (doesExisit) {
+		if (!(member.getPhoneNumber().isEmpty())) {
 			System.out.println("Login successfull!");
 		}
 		else {

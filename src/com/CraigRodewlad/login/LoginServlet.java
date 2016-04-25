@@ -18,6 +18,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	Member member = new Member(null, null, null);
+	CalendarEvents event = new CalendarEvents(null, null, null, null);
 	
     /**
      * Default constructor. 
@@ -56,8 +57,13 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("Login successfull!");
 			
 			if (!(member.equals(null))) {
+				CalendarEvents event = PatronsAccess.retrieveCalendarInfo();
 				
 				request.setAttribute("member",(member.getFirstName()+ " " + member.getLastName()));
+				request.setAttribute("eventName", event.getEventName());
+				request.setAttribute("eventDate", event.getEventDate());
+				request.setAttribute("eventTime", event.getEventTime());
+				request.setAttribute("eventDescription", event.getEventDescription());
 				getServletContext().getRequestDispatcher("/MemberPage.jsp").forward(request, response);
 			}
 			
