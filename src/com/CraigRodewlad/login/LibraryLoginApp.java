@@ -26,11 +26,6 @@ public class LibraryLoginApp {
 			e.printStackTrace();
 		}
 		
-		// Initialize objects
-		Scanner scan = new Scanner(System.in);
-
-
-		scan.close();
 	}
 
 }

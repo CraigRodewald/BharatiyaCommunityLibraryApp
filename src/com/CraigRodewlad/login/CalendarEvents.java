@@ -14,6 +14,9 @@ public class CalendarEvents {
 		this.eventDescription = eventDescription;
 	}
 	
+	public CalendarEvents() {
+	}
+
 	public String getEventName() {
 		return eventName;
 	}
