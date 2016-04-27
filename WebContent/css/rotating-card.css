@@ -11,10 +11,6 @@ body {
 }
 /* entire container, keeps perspective */
 .card-container {
-	margin: 0;
-	padding: 0;
-	display: inline-block;
-	float: left;
 	-webkit-perspective: 800px;
    -moz-perspective: 800px;
      -o-perspective: 800px;
@@ -92,7 +88,7 @@ body {
     color: #444444;
 }
 .card-container, .front, .back {
-	width: 100%;
+	width: 300px;
 	height: 420px;
 	border-radius: 4px;
 }
@@ -148,7 +144,7 @@ body {
 }
 .card .footer {
     border-top: 1px solid #EEEEEE;
-    color: #999999;
+    color: #de995e;
     margin: 30px 0 0;
     padding: 10px 0 0;
     text-align: center;
@@ -202,7 +198,7 @@ body {
 /*      Just for presentation        */
 
 .title{
-    color: #506A85;
+    color: #FFFFFF;
     text-align: center;
     font-weight: 300;
     font-size: 44px;
@@ -211,7 +207,7 @@ body {
 }
 .title small{
     font-size: 17px;
-    color: #999;
+    color: #FFF;
     text-transform: uppercase;
     margin: 0;
 }

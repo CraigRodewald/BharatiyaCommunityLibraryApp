@@ -49,14 +49,9 @@ public class LoginServlet extends HttpServlet {
 
 					request.setAttribute("member", (member.getFirstName() + " " + member.getLastName()));
 
-					for (CalendarEvents event : eventList) {
-						request.setAttribute("eventName", event.getEventName());
-						request.setAttribute("eventDate", event.getEventDate());
-						request.setAttribute("eventTime", event.getEventTime());
-						request.setAttribute("eventDescription", event.getEventDescription());
-						getServletContext().getRequestDispatcher("/NewMember.jsp").forward(request, response);
-
-					}
+					request.setAttribute("eventList", eventList);
+					
+					getServletContext().getRequestDispatcher("/NewMember.jsp").forward(request, response);
 				}
 			}
 			
